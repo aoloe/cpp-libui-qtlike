@@ -1,15 +1,18 @@
 # libui-qtlike
 
-Qt-like library that interfaces with `libui`.
+Qt-like library for `libui`.
 
-`libui` being a C lightweight multi-platform UI library, `libui-qtlike` provides a `C++` interface.
+`libui` is a C lightweight multi-platform UI library using native widgets on Linux (Gtk), OS X, and Windows.  
+`libui-qtlike` provides a `C++` interface to `libui`
 
-Instead of inventing a new class design, it provides an interface that is as close to the Qt one as possible.  
-A welcome side effect being that one can easily start a project with `libui` and, if the project get bigger and needs a more powerful library, it's easy to switch to Qt.
+Instead of inventing a new class design, the interface is as close as possible to the Qt one.  
+As a welcome side effect it should be easier to start a project with `libui` and -- if the project gets bigger and needs a more powerful library -- switch to Qt.
 
-Of course, the UI of a `libui-qtlike` will not look like Qt, except if you are using the Qt backend.
+Of course, the UI of a `libui-qtlike` program will not look like Qt, except if you are using the Qt backend (which is not in `libui` yet).
 
-The initial implementation aims at get one of the basic Qt examples to run: <http://doc.qt.io/qt-5/qtwidgets-mainwindows-application-example.html>
+For small projects, using `libui` will produce much smaller executables for Windows and OS X.
+
+The initial implementation aims at getting one of the basic Qt examples to run: <http://doc.qt.io/qt-5/qtwidgets-mainwindows-application-example.html>
 
 ## Current state
 
@@ -54,7 +57,7 @@ int main(int argc, char *argv[])
 
 ## Building
 
-Currently, `libui-qtlike` has only been tested on Linux.
+On Linux:
 
 - compile `libui` and copy the `.h` and `.so` files in the `libui/` directory
 - compile and run the example:
@@ -70,6 +73,8 @@ Currently, `libui-qtlike` has only been tested on Linux.
 ## Differences to Qt
 
 - The Q from the Qt classes is replaced by the UI namespace.
+- Only UI feataures of Qt are implemented.
+- There won't be more features than what `libui` provides.
 
 ## Todo
 
