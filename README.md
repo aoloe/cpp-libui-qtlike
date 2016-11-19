@@ -89,6 +89,11 @@ On Linux:
 - how to implement signals and slots?
   - <https://testbit.eu/cpp11-signal-system-performance/> / <https://testbit.eu/~timj/blogstuff/simplesignal.cc>
   - <http://www.codeproject.com/Articles/867044/Yassi-Yet-Another-Signal-Slot-Implementation>
+  - http://stackoverflow.com/questions/14459620/slim-c-signal-event-mechanism-with-move-semantics-for-slots?rq=1
+  - https://github.com/pbhogan/Signals/blob/master/Delegate.h
+  - http://stackoverflow.com/questions/8945457/c-observer-pattern-listener-event-methods-class-or-signals-slots?rq=1
+  - http://stackoverflow.com/questions/13592847/c11-observer-pattern-signals-slots-events-change-broadcaster-listener-or
+    http://www.boost.org/doc/libs/1_61_0/doc/html/signals2/tutorial.html#idp394522480
 - a `tr()` translation module.
   - <https://github.com/tinygettext/tinygettext/blob/master/LICENSE.md>
   - gettext
@@ -106,5 +111,7 @@ On Linux:
   - <https://github.com/cbeck88/spirit-po>
   - <http://helloworld922.blogspot.ch/2013/07/thread-safe-signalsslots-using-c11.html>
   - <http://simmesimme.github.io/tutorials/2015/09/20/signal-slot/>
+  - https://github.com/NoAvailableAlias/nano-signal-slot
+  - https://github.com/cpp11nullptr/lsignal/blob/master/main.cpp
 - using utf-8: http://utfcpp.sourceforge.net/
 ### Long term
