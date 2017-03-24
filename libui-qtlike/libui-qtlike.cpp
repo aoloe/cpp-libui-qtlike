@@ -30,6 +30,8 @@ void Menu::addAction(Action *action)
     if (action->getMenuRole() == Action::MenuRole::QuitRole)
     {
         uiMenuAppendQuitItem(menu);
+        // TODO: only do this if the action has no "action"
+        // see the QCoreApplication::aboutToQuit signal
         uiOnShouldQuit([](void *data){return 1;}, NULL);
     }
     else
