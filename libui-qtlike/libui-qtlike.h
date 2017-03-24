@@ -52,6 +52,9 @@ private:
 class Action
 {
 public:
+	/**
+     * @brief see the qt specification:  http://doc.qt.io/qt-4.8/qaction.html#MenuRole-enum
+     */
     enum MenuRole
     {
 		NoRole,
