@@ -21,13 +21,16 @@ MainWindow::MainWindow()
 
 void MainWindow::createActions()
 {
-    // UI::Menu *fileMenu = menuBar()->addMenu(tr("&File"));
-    UI::Menu *fileMenu = menuBar()->addMenu("_File");
+    // UI::Menu *fileMenu = getMenuBar()->addMenu(tr("&File"));
+    UI::Menu *fileMenu = getMenuBar()->addMenu("_File");
     // UI::Action *newAction = new UI::Action(tr("&New"), this);
     UI::Action *newAction = new UI::Action("_New", this);
     // newAction->setShortcuts(UI::KeySequence::New);
     // connect(newAct, &QAction::triggered, this, &MainWindow::newFile);
     fileMenu->addAction(newAction);
+    UI::Action *quitAction = new UI::Action("_Quit", this);
+    quitAction->setMenuRole(UI::Action::MenuRole::QuitRole);
+    fileMenu->addAction(quitAction);
 }
 
 int main(int argc, char *argv[])

@@ -27,7 +27,15 @@ Menu::Menu(const string label)
 
 void Menu::addAction(Action *action)
 {
+    if (action->getMenuRole() == Action::MenuRole::QuitRole)
+    {
+        uiMenuAppendQuitItem(menu);
+        uiOnShouldQuit([](void *data){return 1;}, NULL);
+    }
+    else
+    {
     uiMenuAppendItem(menu, action->text().c_str());
+    }
 }
 
 MenuBar::MenuBar()
@@ -41,18 +49,18 @@ Menu *MenuBar::addMenu(string label)
 }
 
 MainWindow::MainWindow()
-: mMenuBar{new MenuBar}
+: menuBar{new MenuBar}
 {
 }
 
 MainWindow::~MainWindow()
 {
-    delete mMenuBar;
+    delete menuBar;
 }
 
-MenuBar *MainWindow::menuBar()
+MenuBar *MainWindow::getMenuBar()
 {
-    return mMenuBar;
+    return menuBar;
 }
 
 void MainWindow::show()
@@ -63,7 +71,7 @@ void MainWindow::show()
 }
 
 Action::Action(string label, MainWindow *window)
-: label{label}, window{window}
+: label{label}, window{window}, menuRole{MenuRole::NoRole}
 {
 }
 

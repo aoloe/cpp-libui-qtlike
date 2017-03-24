@@ -42,21 +42,36 @@ class MainWindow
 public:
     MainWindow();
     ~MainWindow();
-    MenuBar *menuBar();
+    MenuBar *getMenuBar();
     void show();
 private:
-    MenuBar *mMenuBar; // a dummy menubar: libui only has one
+    MenuBar *menuBar; // a dummy menubar: libui only has one
     uiWindow *mainWindow;
 };
 
 class Action
 {
 public:
+    enum MenuRole
+    {
+		NoRole,
+		TextHeuristicRole,
+		ApplicationSpecificRole,
+		AboutQtRole,
+		AboutRole,
+		PreferencesRole,
+		QuitRole
+    };
+
     Action(string label, MainWindow *window);
     string const text() {return label;};
+	MenuRole getMenuRole() {return menuRole;}
+	void setMenuRole(MenuRole role) {menuRole = role;}
+
 private:
     string label;
     MainWindow *window;
+	MenuRole menuRole;
 };
 
 }
