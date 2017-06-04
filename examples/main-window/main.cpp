@@ -5,6 +5,7 @@ using namespace std;
 
 // qt like example based on
 // http://doc.qt.io/qt-5/qtwidgets-mainwindows-application-example.html
+// /usr/lib/x86_64-linux-gnu/qt5/examples/widgets/mainwindows/mainwindow/main.cpp
 
 class MainWindow : public UI::MainWindow
 {
@@ -25,7 +26,7 @@ void MainWindow::createActions()
     UI::Menu *fileMenu = getMenuBar()->addMenu("_File");
     // UI::Action *newAction = new UI::Action(tr("&New"), this);
     UI::Action *newAction = new UI::Action("_New", this);
-    // newAction->setShortcuts(UI::KeySequence::New);
+    newAction->setShortcuts(UI::Keyboard::KeySequence(UI::Keyboard::Modifier::Ctrl | UI::Keyboard::Key::P));
     // connect(newAct, &QAction::triggered, this, &MainWindow::newFile);
     fileMenu->addAction(newAction);
     UI::Action *quitAction = new UI::Action("_Quit", this);

@@ -77,4 +77,8 @@ Action::Action(string label, MainWindow *window)
 {
 }
 
+void Action::setShortcuts(Keyboard::KeySequence k)
+{
+}
+
 }
